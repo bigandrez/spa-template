@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>VXG Cloud One</title>
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+	<script src="spacore/jquery-3.5.1.js"></script>
+        <script src="spacore/spacore.js"></script>
+	<link rel="stylesheet" type="text/css" href="spacore/spacore.css" />
+
+        <script src="spacore/modules/start/start.js"></script>
+
+</head>
+<body>
+<div class="global-loader"></div>
+<div class="dialogs"></div>
+<div class="body">
+    <div class="leftblock">
+        <table>
+            <tr><td><div class="before-global-menu">before-global-menu</div></td></tr>
+            <tr><td><div class="global-menu"><ul></ul></div><div class="after-global-menu">after-global-menu</div></td></tr>
+            <tr><td><div class="bottom-global-menu">bottom-global-menu</div></td></tr>
+        </table>
+
+    </div>
+    <div class="rightblock">
+        <div class="headerBlock">
+            <div class="header-left">header-left</div>
+            <div class="header-title">header-title</div>
+            <div class="header-right">header-right</div>
+        </div>
+
+        <div class="header-wrapper header-font">
+            <table><tr><td class="header-left"></td><td class="header-center"></td><td class="header-search"></td><td class="header-right"></td></tr></table>
+        </div>
+        <div class="screens-wrapper screens"></div>
+    </div>
+</div>
+
+<script>
+
+$( document ).ready(function() {
+
+    let elements = {
+        'global-loader' : $('.global-loader'),
+        'before-global-menu' : $('.before-global-menu'),
+        'global-menu' : $('.global-menu > ul'),
+        'after-global-menu' : $('.after-global-menu'),
+        'bottom-global-menu' : $('.bottom-global-menu'),
+        'header-left' : $('.headerBlock  div.header-left'),
+        'header-center' : $('.headerBlock  div.header-center'),
+        'header-right' : $('.headerBlock  div.header-right'),
+        'screens' : $('.screens-wrapper.screens')
+    }
+
+    window.core.init(elements).then(function(){
+        window.screens['start'].activate();
+    });
+});
+
+</script>
+
+</body>
+</html>
